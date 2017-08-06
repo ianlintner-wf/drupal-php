@@ -12,7 +12,8 @@ execTpl() {
     fi
 }
 
-chown www-data:www-data "${WODBY_DIR_FILES}"
+chown www-data:www-data "${WODBY_DIR_FILES}" || echo "Warning unable to: chown www-data:www-data ${WODBY_DIR_FILES}"
+
 
 if [[ -n "${DRUPAL_VERSION}" ]]; then
     if [[ "${DRUPAL_VERSION}" == "7" ]] || [[ "${DRUPAL_VERSION}" == "8" ]]; then
